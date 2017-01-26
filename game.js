@@ -73,7 +73,7 @@ var checkWinner = function() {
 }
 
 // build out function to replace nubers with 'X's or 'O's
-var placePiece = function(locationNumber, char) {
+placePiece = function(locationNumber, char) {
   var moveValid = true;
 
   switch(locationNumber) {
@@ -123,7 +123,7 @@ console.log(game);
 prompt.start();
 
 var playTurn = function() {
-  
+
   prompt.get(['location'], function (err, result) {
     placePiece(result.location, currPlayer);
     if (currPlayer === 'X') {
@@ -140,3 +140,7 @@ var playTurn = function() {
 }
 
 playTurn();
+
+
+module.exports.game = game;
+module.exports.placePiece = placePiece;
